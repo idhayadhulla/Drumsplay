@@ -1,6 +1,3 @@
-
-// button press
-
 var AllDrumsButton=document.querySelectorAll(".drum").length;
 for (var i = 0;i<AllDrumsButton; i++) {
 	document.querySelectorAll(".drum")[i].addEventListener("click",handClick);
@@ -13,13 +10,10 @@ buttonAnimation(buttonInnerHTML);
  }
 }
 
-// keyborad press
-
-document.addEventListener("keypress", function(event){
-	makeSound(event.key); 
+document.addEventListener('keypress',function(event){
+	makeSound(event.key);
 	buttonAnimation(event.key);
 });
-
 
 function makeSound(key) {
  switch(key) {
@@ -56,12 +50,15 @@ case "i":
           default:
 }
 }
-	
+
+
 function buttonAnimation(currentKey){
-	var activeButton = document.querySelector("."+currentKey);
+	var activeButton =document.querySelector("."+currentKey);
 	activeButton.classList.add("pressed");
-	setTimeout(function() {
-	activeButton.classList.remove("pressed");	
+
+	setTimeout(function(){
+		activeButton.classList.remove("pressed");
 	},100);
+
 }
 
